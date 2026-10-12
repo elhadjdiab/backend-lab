@@ -62,4 +62,3 @@ Dans ton dépôt `backend-lab`, crée le dossier `01-concurrence/lab1/` avec les
 - l'explication de chaque bug en quelques lignes ;
 - les réponses aux questions de contrôle.
 
-Quand tu as fini, envoie-moi tes explications : je te dirai ce qui est juste, ce qui manque, et on passe au lab 2 (le deadlock).
