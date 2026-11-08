@@ -6,6 +6,7 @@ import { Worker, isMainThread, workerData } from 'node:worker_threads';
 const WORKERS = 1;
 const PER_WORKER = 1_000_000;
 
+// Un compteur partagé entre threads, initialisé à 0
 if (isMainThread) {
   const mode = process.argv[2] ?? 'unsafe'; 
   const shared = new Int32Array(new SharedArrayBuffer(4));   // 1 entier partagé
@@ -25,6 +26,7 @@ if (isMainThread) {
   console.log(`perdu    : ${expected - shared[0]}`);
   console.log(`durée    : ${(performance.now() - start).toFixed(0)} ms`);
 } else {
+  // Le code exécuté par chaque thread : incrémente le compteur partagé
   const { shared, mode, PER_WORKER } = workerData;
   if (mode === 'atomic') {
     for (let i = 0; i < PER_WORKER; i++) Atomics.add(shared, 0, 1);   // indivisible
