@@ -3,7 +3,7 @@
 Durée : 2 à 3 heures. Prérequis : le lab 1 (race conditions et mutex).
 
 **Règles du lab**
-1. **Avant de lancer chaque script, écris ta prédiction** dans `notes.md`.
+1. **Avant de lancer chaque script, écrire la prédiction** dans `notes.md`.
 2. **Le problème avant la solution** : les parties A, B et C servent à observer et comprendre le deadlock. Ne lance les scripts de correction (partie D) qu'après avoir fini la partie C.
 
 ## Les fichiers
@@ -141,4 +141,4 @@ Dans `phase-1-fondations/01-concurrence/lab2/`, crée un `notes.md` contenant :
 - le tableau comparatif de la partie D rempli ;
 - un exemple réel où tu pourrais rencontrer un deadlock.
 
-Quand c'est fait, envoie-moi tes réponses à la partie C avant de regarder la partie D : je te dirai ce qui est juste et ce qui manque.
+

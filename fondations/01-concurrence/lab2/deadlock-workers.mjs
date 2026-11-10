@@ -9,6 +9,7 @@ const NAMES = ['A', 'B'];
 
 function pause(ms) { Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms); }
 
+// Prendre un verrou
 function lock(mem, which, me) {
   Atomics.store(mem, me === 1 ? WAIT_1 : WAIT_2, which + 1);          // « j'attends ce verrou »
   for (;;) {
@@ -18,6 +19,7 @@ function lock(mem, which, me) {
   }
   Atomics.store(mem, me === 1 ? WAIT_1 : WAIT_2, 0);
 }
+// Relâcher un verrou
 function unlock(mem, which) {
   Atomics.store(mem, which, 0);
   Atomics.notify(mem, which, 1);

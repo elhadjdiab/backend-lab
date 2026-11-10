@@ -7,7 +7,7 @@ export class Mutex {
 
   acquire(timeoutMs) {
     return new Promise((resolve, reject) => {
-      const entry = { timer: null };
+      const entry = { timer: null };  
       entry.grant = () => {
         clearTimeout(entry.timer); 
         this.#locked = true; 

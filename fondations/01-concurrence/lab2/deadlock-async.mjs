@@ -30,9 +30,11 @@ async function transfer(label, from, to, amount) {
 
 // Deux transferts en sens contraire, lancés en même temps
 const work = Promise.all([
-  transfer('T1', A, B, 10),
-  transfer('T2', B, A, 20),
+  transfer('T1', A, B, 10), 
+  // transfer('T2', A, B, 20)
+  // transfer('T2', B, A, 20), 
 ]);
+
 
 // Chien de garde : si rien n'a fini après 1 seconde, on le signale
 const watchdog = new Promise((resolve) => setTimeout(() => resolve('TIMEOUT'), 1000));
